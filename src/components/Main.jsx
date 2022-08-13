@@ -1,51 +1,28 @@
-import React, { useState, useEffect } from "react";
-import Table from "./MuiTable";
+import Table from "./MuiCard";
+import { useState } from "react";
 import styles from "../assets/styles/main.module.css";
-import { fetchProducts } from "../api/index";
+import { useFetch } from "../useFetch";
+import { Environment } from "../environment";
 
 const Main = () => {
-  const [productData, setProductData] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [mainData, setMainData] = useState([]);
+  const { data, error, inProgress } = useFetch(Environment.getCardURL);
 
-  const fetchData = async () => {
-    await fetchProducts()
-    .then((data) => {
-      setProductData(data);
-      setCategories(prev => [...new Set(data.map((item) => item.category))])
-    })
-    .catch((e) => {
-      console.error(e);
-    });
+  if (data && mainData.length === 0) {
+    let mallData = [];
+    for (let i in data) {
+      let element = {...data[i]};
+      element["id"] = i;
+      element["link"] = Environment.urlDict[element["mall"]];
+      mallData.push(element);
+    };
+    setMainData(mallData);
   };
-
-  const fetchDataByCategorie = (e) =>{
-    fetchProducts(e.target.value)
-    .then((data) => {
-      setProductData(data);
-    })
-    .catch((e) => {
-      console.error(e);
-    });
-  }
-
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   return (
     <main className={styles.main_section}>
       <div className={styles.container}>
-        <div className={styles.search_section}>
-          <i className={`fas fa-search ${styles.search_icon}`}></i>
-          <select className={styles.search_input} onChange={e => fetchDataByCategorie(e)}>
-            <option value="all">Category</option>
-            {categories.map((value,index) => (
-              <option key={index} value={value}>{value}</option>
-            ))}
-          </select>
-        </div>
-        <Table products={productData} />
+        {mainData.length > 0 ? <Table elements={mainData} /> : null}
       </div>
     </main>
   );

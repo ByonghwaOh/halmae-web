@@ -1,26 +1,19 @@
 # About The Project
 
-Product List Application Using :
+Halmae-web Application Using :
 
   * [React JS](https://reactjs.org/)^17.0.2
   * [Material-UI](https://mui.com/) ^5.2.8
-  * [Fake Store API](https://fakestoreapi.com/)
 
 
-![image](https://user-images.githubusercontent.com/68668646/149683790-03877aa0-6129-4576-9fb5-fd448ea735aa.png)
+![image](https://www.theanimalpress.com/wp-content/uploads/2022/06/%E1%84%89%E1%85%B5%E1%84%80%E1%85%A9%E1%84%85%E1%85%B3%E1%84%8C%E1%85%A1%E1%84%87%E1%85%B3%E1%84%8C%E1%85%A9%E1%86%BC-4.jpeg)
 
-
-## Deployed In
-
-<a href="https://app.netlify.com/sites/make-a-readme/deploys" rel="nofollow"><img src="https://camo.githubusercontent.com/047b2905ee4cf09ba97ba0bd75feedcce3b1de97a717016ac97d9c52e9a0d168/68747470733a2f2f6170692e6e65746c6966792e636f6d2f6170692f76312f6261646765732f36383939326431632d333664342d346138342d623137372d3030633166363466626362342f6465706c6f792d737461747573" alt="Netlify Status" data-canonical-src="https://api.netlify.com/api/v1/badges/68992d1c-36d4-4a84-b177-00c1f64fbcb4/deploy-status" style="max-width: 100%;"></a>
-
-* [Project Link](https://productlist-app.netlify.app/)
 
 ## Installation
 
 1. Clone the repo
 ```sh
-git clone https://github.com/AoussarElMehdi/product-list-app.git
+git clone https://github.com/ByonghwaOh/halmae-web.git
 ```
 2. Install NPM packages
 ```sh
