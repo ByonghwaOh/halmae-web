@@ -7,11 +7,17 @@
 }
 
 .logo_icon {
-    margin: 0 12px;
+    margin: 0 10px;
 }
 
 .logo_text {
     font-size: 24px;
+    font-weight: 500;
+    color: darkblue;
+}
+
+.logo_text_slim {
+    font-size: 18px;
     font-weight: 500;
     color: darkblue;
 }
@@ -23,7 +29,13 @@
 }
 
 .header_text {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-    color: darkblue;
+    color: darkslategrey;
+}
+
+.header_text_slim {
+    font-size: 12px;
+    font-weight: 500;
+    color: darkslategrey;
 }

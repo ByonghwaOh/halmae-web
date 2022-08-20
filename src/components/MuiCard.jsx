@@ -1,13 +1,14 @@
-import React from "react";
-import { Typography, Avatar, Stack, Box, CardContent, Card, IconButton } from "@mui/material";
-import { Environment } from "../environment";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import React from 'react';
+import { Typography, Avatar, Stack, Box, CardContent, Card, IconButton } from '@mui/material';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Environment } from '../environment';
+import { useWindowDimensions } from '../utils';
 
 const benefitColors = {
-  "1%": "darkcyan",
-  "5%": "darkblue",
-  "7%": "rebeccapurple",
-  "10%": "crimson",
+  '1%': 'darkcyan',
+  '5%': 'darkblue',
+  '7%': 'rebeccapurple',
+  '10%': 'crimson',
 };
 
 const sortKeys = unordered => (
@@ -22,61 +23,88 @@ const classifyBenefit = benefitStr => {
   const result = {};
   if ( matches ) {
     matches.forEach(match => {
-      const [key, value] = match.split(":").map(s => s.trim());
-      result[value] = result[value] ? result[value] + ", " + key : key;
+      const [key, value] = match.split(':').map(s => s.trim());
+      result[value] = result[value] ? result[value] + ', ' + key : key;
     });
   };
   return sortKeys(result);
 };
 
-const RenderMall = ({ mall }) => (
-  <Stack direction="column" justifyContent="center" alignItems="center">
-    <img
-      src={Environment.iconDict[mall]}
-      height="36"
-      width="36"
-      style={{ marginBottom: 5, borderRadius: 5 }}
-      alt={mall}
-    />
-    <Typography variant="subtitle2">{mall.replace(" ", "")}</Typography>
-  </Stack>
-);
+const RenderMall = ({ mall, slim }) => {
+  const setting = Environment.widthSetting[slim ? 'slim' : 'normal'];
 
-const RenderBenefit = ({ benefit }) => {
+  return (
+    <Stack direction='column' justifyContent='center' alignItems='center'>
+      <img
+        src={Environment.iconDict[mall]}
+        height={setting['mallIconWH']}
+        width={setting['mallIconWH']}
+        style={setting['mallIconStyle']}
+        alt={mall}
+      />
+      <Typography
+        align='center'
+        sx={{fontSize: setting['mallIconCaptionSize'], fontWeight: 'medium'}}
+      >
+        {mall.replace(' ', '')}
+      </Typography>
+    </Stack>
+  );
+};
+
+const RenderBenefit = ({ benefit, slim }) => {
   const classified = classifyBenefit(benefit);
   const discounts = Object.keys(classified);
+  const setting = Environment.widthSetting[slim ? 'slim' : 'normal'];
+  const sxTypo = {fontSize: setting['benefitFontSize'], fontWeight: 'medium'}
+
   if (discounts.length === 0) {
-    return <Typography>{"혜택이 없습니다!"}</Typography>
+    return <Typography sx={sxTypo}>{'혜택이 없습니다!'}</Typography>
   };
+
   return (
-    <Stack spacing={2}>
+    <Stack spacing={setting['benefitSpacing']}>
       {discounts.map(key =>
-        <Stack direction="row" alignItems="center" spacing={1} key={"b" + key}>
-          <Avatar sx={{ bgcolor: benefitColors[key], height: 32, width: 32,
-            fontSize: 16, fontWeight: 500 }}>{key}</Avatar>
-          <Typography>
-            {classified[key]}
-          </Typography>
+        <Stack
+          direction='row'
+          alignItems='center'
+          spacing={setting['benefitPercentSpacing']}
+          key={'b' + key}
+        >
+          <Avatar
+            sx={{ bgcolor: benefitColors[key],
+              height: setting['benefitPercentWH'],
+              width: setting['benefitPercentWH'],
+              fontSize: setting['benefitPercentFontSize'],
+              fontWeight: setting['benefitPercentFontWeight'] }}
+          >{key}</Avatar>
+          <Typography sx={sxTypo}>{classified[key]}</Typography>
         </Stack>
         )}
     </Stack>
   );
 };
 
-const ContentCard = ({ element }) => {
+const ContentCard = ({ element, width }) => {
+  const slim = width >= Environment.widthSetting['slimWidth'] ? false : true;
+  const setting = Environment.widthSetting[slim ? 'slim' : 'normal'];
+
   return (
-    <Card variant="outlined" sx={{ margin: 1 }}>
-      <Box sx={{ display: "flex", flexDirection: "row", alignItems: "stretch" }}>
-        <CardContent sx={{ width: 100, bgcolor: "#eeeeee" }}>
-          <RenderMall mall={element["mall"]} />
+    <Card variant='outlined' sx={{ margin: setting['cardMargin'] }}>
+      <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'stretch' }}>
+        <CardContent
+          sx={{ width: setting['mallIconAreaWidth'],
+          bgcolor: '#eeeeee' }
+        }>
+          <RenderMall mall={element['mall']} slim={slim} />
         </CardContent>
         <CardContent sx={{ flex: 3 }}>
-          <RenderBenefit benefit={element["benefit"]} />
+          <RenderBenefit benefit={element['benefit']} slim={slim} />
         </CardContent>
         <IconButton
-          aria-label="바로가기"
-          sx={{ width: 30 }}
-          onClick={() => window.open(element["link"], '_blank')}
+          aria-label='바로가기'
+          sx={{ width: setting['arrowIconWidth'] }}
+          onClick={() => window.open(element['link'], '_blank')}
         >
           <ArrowForwardIosIcon />
         </IconButton>
@@ -86,9 +114,16 @@ const ContentCard = ({ element }) => {
 };
 
 const DataTable = ({ elements }) => {
+  const { height, width } = useWindowDimensions();
+
   return (
     <div>
-    {elements.map(element => <ContentCard element={element} key={element["id"]} />)}
+      {elements.map(element =>
+        <ContentCard
+          element={element}
+          width={width}
+          key={element['id']}
+        />)}
     </div>
   );
 };

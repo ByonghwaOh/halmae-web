@@ -1,5 +1,5 @@
 export const Environment = {
-    getCardURL: "https://ckrohv0jme.execute-api.ap-northeast-2.amazonaws.com/default/CardBenefitResult",
+    getCardURL: 'https://ckrohv0jme.execute-api.ap-northeast-2.amazonaws.com/default/CardBenefitResult',
     iconDict: {
         인터파크: require('./assets/icons/icon_interpark.png'),
         Hmall: require('./assets/icons/icon_hmall.jpeg'),
@@ -32,4 +32,37 @@ export const Environment = {
         'KT알파 쇼핑': 'https://m.kshop.co.kr',
         W쇼핑: 'http://m.w-shopping.co.kr',
     },
+    widthSetting: {
+        slimWidth: 320,
+        normal: {
+            logoWidth: 96,
+            cardMargin: 0.5,
+            mallIconWH: '36',
+            mallIconStyle: {marginBottom: 5, borderRadius: 5},
+            mallIconCaptionSize: 14,
+            mallIconAreaWidth: 100,
+            benefitPercentWH: 32,
+            benefitPercentFontSize: 16,
+            benefitPercentFontWeight: 500,
+            benefitPercentSpacing: 1,
+            benefitFontSize: 16,
+            benefitSpacing: 2,
+            arrowIconWidth: 30,
+        },
+        slim: {
+            logoWidth: 72,
+            cardMargin: 0.5,
+            mallIconWH: '32',
+            mallIconStyle: {marginBottom: 5, borderRadius: 5},
+            mallIconCaptionSize: 10,
+            mallIconAreaWidth: 80,
+            benefitPercentWH: 28,
+            benefitPercentFontSize: 14,
+            benefitPercentFontWeight: 500,
+            benefitPercentSpacing: 1,
+            benefitFontSize: 14,
+            benefitSpacing: 2,
+            arrowIconWidth: 22,
+        },
+    }
 };

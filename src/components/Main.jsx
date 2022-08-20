@@ -1,8 +1,8 @@
-import Table from "./MuiCard";
-import { useState } from "react";
-import styles from "../assets/styles/main.module.css";
-import { useFetch } from "../useFetch";
-import { Environment } from "../environment";
+import DataTable from './MuiCard';
+import { useState } from 'react';
+import styles from '../assets/styles/main.module.css';
+import { useFetch } from '../useFetch';
+import { Environment } from '../environment';
 
 const Main = () => {
   const [mainData, setMainData] = useState([]);
@@ -12,8 +12,8 @@ const Main = () => {
     let mallData = [];
     for (let i in data) {
       let element = {...data[i]};
-      element["id"] = i;
-      element["link"] = Environment.urlDict[element["mall"]];
+      element['id'] = i;
+      element['link'] = Environment.urlDict[element['mall']];
       mallData.push(element);
     };
     setMainData(mallData);
@@ -22,7 +22,7 @@ const Main = () => {
   return (
     <main className={styles.main_section}>
       <div className={styles.container}>
-        {mainData.length > 0 ? <Table elements={mainData} /> : null}
+        {mainData.length > 0 ? <DataTable elements={mainData} /> : null}
       </div>
     </main>
   );
