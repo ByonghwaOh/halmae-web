@@ -16,6 +16,13 @@ export const Environment = {
         'KT알파 쇼핑': require('./assets/icons/icon_ktalphashopping.png'),
         W쇼핑: require('./assets/icons/icon_wshopping.png'),
     },
+    imageDict: {
+        info: require('./assets/images/sale896.png'),
+        screen01: require('./assets/images/screen_0815_01.png'),
+        screen02: require('./assets/images/screen_0815_02.png'),
+        screen03: require('./assets/images/screen_0815_03.png'),
+        screen04: require('./assets/images/screen_0815_04.png'),
+    },
     urlDict: {
         인터파크: 'http://m.shop.interpark.com',
         Hmall: 'https://www.hmall.com/m/index.do',
@@ -33,7 +40,7 @@ export const Environment = {
         W쇼핑: 'http://m.w-shopping.co.kr',
     },
     widthSetting: {
-        slimWidth: 320,
+        slimWidth: 340,
         normal: {
             logoWidth: 96,
             cardMargin: 0.5,

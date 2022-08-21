@@ -78,7 +78,9 @@ const RenderBenefit = ({ benefit, slim }) => {
               fontSize: setting['benefitPercentFontSize'],
               fontWeight: setting['benefitPercentFontWeight'] }}
           >{key}</Avatar>
-          <Typography sx={sxTypo}>{classified[key]}</Typography>
+          <Typography sx={sxTypo}>
+            {key === '10%' ? classified[key] + ' (일부 상품)' : classified[key]}
+          </Typography>
         </Stack>
         )}
     </Stack>
@@ -113,7 +115,7 @@ const ContentCard = ({ element, width }) => {
   );
 };
 
-const DataTable = ({ elements }) => {
+const CardList = ({ elements }) => {
   const { height, width } = useWindowDimensions();
 
   return (
@@ -128,4 +130,4 @@ const DataTable = ({ elements }) => {
   );
 };
 
-export default DataTable;
+export default CardList;

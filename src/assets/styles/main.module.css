@@ -1,10 +1,25 @@
 .main_section {
   padding: 0px 0px;
+  background-color: #fff;
+}
+
+.container_main {
+  padding: 8px;
+  transform: translateY(-55px);
+  background-color: #fff;
 }
 
 .container {
-  padding: 10px;
-  transform: translateY(-75px);
+  padding: 8px;
+  transform: translateY(-105px);
   background-color: #fff;
-  border-radius: 10px;
+}
+
+.footer {
+  padding: 30px;
+  transform: translateY(-60px);
+  background-color: #fff;
+  width: 100%;
+  flex: auto;
+  text-align: center;
 }

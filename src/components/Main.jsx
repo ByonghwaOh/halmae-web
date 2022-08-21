@@ -1,4 +1,4 @@
-import DataTable from './MuiCard';
+import CardList from './MuiCard';
 import { useState } from 'react';
 import styles from '../assets/styles/main.module.css';
 import { useFetch } from '../useFetch';
@@ -21,8 +21,8 @@ const Main = () => {
 
   return (
     <main className={styles.main_section}>
-      <div className={styles.container}>
-        {mainData.length > 0 ? <DataTable elements={mainData} /> : null}
+      <div className={styles.container_main}>
+        {mainData.length > 0 ? <CardList elements={mainData} /> : null}
       </div>
     </main>
   );
