@@ -9,9 +9,28 @@ import Survey from './components/Survey';
 import Info from './components/Info';
 import Footer from './components/Footer';
 
-const TabText = ({ text }) => (
-  <Typography variant='subtitle1' sx={{fontWeight: 600}}>{text}</Typography>
+// Initializing GA and Tracking Pageviews
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-238703857-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
+const TabText = ({ text, subtext=null }) => (
+  <>
+    <Typography variant='subtitle1' sx={{fontWeight: 600}}>
+      {text}
+    </Typography>
+    {subtext ?
+      <Typography variant='subtitle2' sx={{fontWeight: 600}}>
+        {subtext}
+      </Typography> : null}
+  </>
 );
+
+const TabTextColored = ({ text, subtext=null, color=null }) => (
+  <span style={{color: color}}>
+    <TabText text={text} subtext={subtext} />
+  </span>
+)
 
 const RenderScreen = ({ value }) => {
   if (value === 0) {
@@ -40,7 +59,8 @@ const App = () => {
         onChange={handleChange}
       >
         <Tab label={<TabText text={'할인메이트'} />} />
-        <Tab label={<TabText text={'설문조사'} />} />
+        <Tab label={<TabTextColored
+          text={'설문조사'} subtext={'(9/12까지!)'} color={'crimson'} />} />
         <Tab icon={<HelpOutlineIcon />} />
       </Tabs>
       <Header viewText={value === 0 ? true : false} />
