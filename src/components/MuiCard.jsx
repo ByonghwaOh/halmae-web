@@ -8,6 +8,7 @@ const benefitColors = {
   '1%': 'darkcyan',
   '5%': 'darkblue',
   '7%': 'rebeccapurple',
+  '8%': 'deeppink',
   '10%': 'crimson',
 };
 
