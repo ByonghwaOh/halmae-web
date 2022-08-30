@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from '../assets/styles/header.module.css';
+import styles from '../styles/header.module.css';
 import { Environment } from '../environment';
 import { useWindowDimensions } from '../utils';
+import Image from 'next/image';
 
 const Header = ({ viewText=true }) => {
   const today = new Date();
@@ -11,22 +12,25 @@ const Header = ({ viewText=true }) => {
   const setting = Environment.widthSetting[slim ? 'slim' : 'normal'];
   const styleLogoText = slim ? styles.logo_text_slim : styles.logo_text;
   const styleHeaderText = slim ? styles.header_text_slim : styles.header_text;
+  console.log(slim, width, styleLogoText, styleHeaderText);
+  console.log(styles.logo_text_slim, styles.header_text_slim);
 
   return (
     <div className={styles.header}>
-      <img
+      {/*<Image
         className={styles.logo_icon}
-        src={require('../assets/icons/logo.png')}
+        src='/assets/icons/logo.png'
         width={setting['logoWidth']}
+        height='21%'
         alt='Halmae'
-      />
+  />*/}
       <span className={styleLogoText}>카드할인 정보 ({dateStr})</span>
       <div className={styles.line}></div>
       {viewText ?
         <span className={styleHeaderText}>
          <center>쇼핑몰별로 오늘의 즉시/청구할인 정보를 보여 줍니다.</center>
-         <center>{'(구매전 카드할인이 일치하는지 확인하시기 바랍니다.)'}</center>
-        </span> : null}
+         <center>(구매전 카드할인이 일치하는지 확인하시기 바랍니다.)</center>
+        </span> : <span />}
     </div>
   );
 };

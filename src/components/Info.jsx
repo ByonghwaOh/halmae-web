@@ -1,8 +1,9 @@
 import { Typography, CardContent, Card, CardMedia, CardActions, Button, Box } from '@mui/material';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import styles from '../assets/styles/main.module.css';
+import styles from '../styles/main.module.css';
 import { Environment } from '../environment';
+import Image from 'next/image';
 
 const CompanyCard = () => (
   <Card sx={{ maxWidth: 345 }}>
@@ -56,7 +57,13 @@ const StandardImageList = () => {
     <ImageList cols={4} >
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
-          <img src={item.img} alt={item.title} loading="lazy" />
+          <Image
+            src={item.img}
+            alt={item.title}
+            loading="lazy"
+            width='100%'
+            height='100%'
+          />
         </ImageListItem>
         ))}
     </ImageList>

@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import styles from '../assets/styles/main.module.css';
-
+import styles from '../styles/main.module.css';
 
 const Footer = () => {
   return (

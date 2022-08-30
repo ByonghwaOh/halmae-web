@@ -3,6 +3,7 @@ import { Typography, Avatar, Stack, Box, CardContent, Card, IconButton } from '@
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Environment } from '../environment';
 import { useWindowDimensions } from '../utils';
+import Image from 'next/image';
 
 const benefitColors = {
   '1%': 'darkcyan',
@@ -33,10 +34,9 @@ const classifyBenefit = benefitStr => {
 
 const RenderMall = ({ mall, slim }) => {
   const setting = Environment.widthSetting[slim ? 'slim' : 'normal'];
-
   return (
     <Stack direction='column' justifyContent='center' alignItems='center'>
-      <img
+      <Image
         src={Environment.iconDict[mall]}
         height={setting['mallIconWH']}
         width={setting['mallIconWH']}

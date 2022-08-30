@@ -3,16 +3,18 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { Typography } from '@mui/material';
-import Header from './components/Header';
-import Main from './components/Main';
-import Survey from './components/Survey';
-import Info from './components/Info';
-import Footer from './components/Footer';
+import Header from '../src/components/Header';
+import Main from '../src/components/Main';
+import Survey from '../src/components/Survey';
+import Info from '../src/components/Info';
+import Footer from '../src/components/Footer';
 
 // Initializing GA and Tracking Pageviews
-import ReactGA from 'react-ga';
-ReactGA.initialize('UA-238703857-1');
-ReactGA.pageview(window.location.pathname + window.location.search);
+//import ReactGA from 'react-ga';
+//if (typeof window !== "undefined") {
+//  ReactGA.initialize('UA-238703857-1');
+//  ReactGA.pageview(window.location.pathname + window.location.search);
+//};
 
 const TabText = ({ text, subtext=null }) => (
   <>

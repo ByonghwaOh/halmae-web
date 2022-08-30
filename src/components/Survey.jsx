@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from '../assets/styles/main.module.css';
+import styles from '../styles/main.module.css';
 
 // https://stackoverflow.com/a/56916166
 class SurveyMonkey extends Component {
