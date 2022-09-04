@@ -11,12 +11,15 @@ import Footer from '../src/components/Footer';
 import { NextSeo } from 'next-seo';
 import { Environment } from '../src/environment';
 
-// Initializing GA and Tracking Pageviews
+// Initializing GA and Tracking Pageviews (Universal)
 //import ReactGA from 'react-ga';
 //if (typeof window !== "undefined") {
 //  ReactGA.initialize('UA-238703857-1');
 //  ReactGA.pageview(window.location.pathname + window.location.search);
 //};
+
+// netlify build option
+// https://answers.netlify.com/t/deployment-of-nextjs-website-page-not-found/28870
 
 const TabText = ({ text, subtext=null }) => (
   <>
