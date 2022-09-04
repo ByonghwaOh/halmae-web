@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "dangerously-set-html-content": "^1.0.9",
     "next": "latest",
+    "next-seo": "^5.5.0",
     "react": "latest",
     "react-dom": "latest",
     "react-ga": "^3.3.1",

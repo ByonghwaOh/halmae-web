@@ -3,11 +3,11 @@ import { Typography, Avatar, Stack, Box, CardContent, Card, IconButton } from '@
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Environment } from '../environment';
 import { useWindowDimensions } from '../utils';
-import Image from 'next/image';
 
 const benefitColors = {
   '1%': 'darkcyan',
   '5%': 'darkblue',
+  '6%': 'indigo',
   '7%': 'rebeccapurple',
   '8%': 'deeppink',
   '10%': 'crimson',
@@ -36,7 +36,8 @@ const RenderMall = ({ mall, slim }) => {
   const setting = Environment.widthSetting[slim ? 'slim' : 'normal'];
   return (
     <Stack direction='column' justifyContent='center' alignItems='center'>
-      <Image
+      {/*<Image*/}
+      <img
         src={Environment.iconDict[mall]}
         height={setting['mallIconWH']}
         width={setting['mallIconWH']}

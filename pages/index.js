@@ -8,6 +8,8 @@ import Main from '../src/components/Main';
 import Survey from '../src/components/Survey';
 import Info from '../src/components/Info';
 import Footer from '../src/components/Footer';
+import { NextSeo } from 'next-seo';
+import { Environment } from '../src/environment';
 
 // Initializing GA and Tracking Pageviews
 //import ReactGA from 'react-ga';
@@ -46,7 +48,7 @@ const RenderScreen = ({ value }) => {
   };
 };
 
-const App = () => {
+const HomePage = () => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -54,7 +56,22 @@ const App = () => {
   };
 
   return (
-    <div className='App'>
+    <div>
+      <NextSeo
+        robotsProps={{
+          nosnippet: true,
+          notranslate: true,
+          noimageindex: true,
+          noarchive: true,
+          maxSnippet: -1,
+          maxImagePreview: 'none',
+          maxVideoPreview: -1,
+        }}
+        additionalMetaTags={[{
+          name: 'keywords',
+          content: Environment.keywords,
+        }]}
+      />
       <Tabs
         centered
         value={value}
@@ -62,7 +79,7 @@ const App = () => {
       >
         <Tab label={<TabText text={'할인메이트'} />} />
         <Tab label={<TabTextColored
-          text={'설문조사'} subtext={'(9/12까지!)'} color={'crimson'} />} />
+          text={'설문조사'} subtext={'(스벅쿠폰증정!)'} color={'crimson'} />} />
         <Tab icon={<HelpOutlineIcon />} />
       </Tabs>
       <Header viewText={value === 0 ? true : false} />
@@ -72,4 +89,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default HomePage;

@@ -6,7 +6,7 @@ import { Environment } from '../environment';
 
 const Main = () => {
   const [mainData, setMainData] = useState([]);
-  const { data, error, inProgress } = useFetch(Environment.getCardURL);
+  const { data, error, inProgress } = useFetch('/api/cardbenefit');
 
   if (data && mainData.length === 0) {
     let mallData = [];

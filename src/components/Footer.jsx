@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import styles from '../styles/main.module.css';
+import { AdfitBanner1 } from './Advertise';
 
 const Footer = () => {
   return (
@@ -9,6 +10,8 @@ const Footer = () => {
           <Typography variant='overline'>
             © 2022. 퓨게더 Co. all rights reserved.
           </Typography>
+          <Box height='30px'></Box>
+          <AdfitBanner1 />
         </div>
       </Box>
     </Box>

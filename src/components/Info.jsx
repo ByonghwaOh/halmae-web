@@ -3,7 +3,6 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import styles from '../styles/main.module.css';
 import { Environment } from '../environment';
-import Image from 'next/image';
 
 const CompanyCard = () => (
   <Card sx={{ maxWidth: 345 }}>
@@ -57,7 +56,7 @@ const StandardImageList = () => {
     <ImageList cols={4} >
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
-          <Image
+          <img
             src={item.img}
             alt={item.title}
             loading="lazy"
