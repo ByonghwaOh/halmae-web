@@ -22,11 +22,11 @@ const CompanyCard = () => (
       <Typography variant="body2" color="text.secondary" paragraph={true}>
         퓨게더는 AI 연구/개발 전문성을 가진 팀원들로 구성된 팀입니다. 
         온라인 마케팅 플랫폼 개발을 하고 있으며, 향후 오프라인 위치기반 마케팅 시장 진출을 목표로 하고 있습니다.
-        2022 예비창업패키지에 선정되었습니다. 
+        {/*2022 예비창업패키지에 선정되었습니다. */}{' '}
         온라인 쇼핑몰의 할인 정보 제공 장치 및 방법 (출원번호: 10-2022-0101259) 으로 출원 완료 상태입니다.
       </Typography>
       <Typography gutterBottom variant="h6" component="div">
-        제품 소개
+        서비스 소개
       </Typography>
       <Typography variant="body2" color="text.secondary" paragraph={true}>
         "온라인 쇼핑몰의 게릴라성 할인 정보 알림과 예측" 서비스를 제공하고 있습니다. 
