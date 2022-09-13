@@ -3,6 +3,7 @@ import SEO from '../next-seo.config';
 import { useEffect } from 'react';
 import { init } from '../src/ga';
 import '../src/styles/index.css';
+import CssBaseline from '@mui/material/CssBaseline';
 
 export default function App({ Component, pageProps }) {
   // Initializing GA and Tracking Pageviews (GA4)
@@ -12,6 +13,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <CssBaseline />
       <DefaultSeo {...SEO} />
       <Component {...pageProps} />
     </>
