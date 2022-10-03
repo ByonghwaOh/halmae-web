@@ -1,3 +1,16 @@
 [build]
     command = "npm run build && npm run export"
     publish = "out"
+
+[[redirects]]
+  from = "/blog"
+  to = "https://blog.halmae.shop"
+  status = 301
+  force = false
+
+## This rule redirects to an external API, signing requests with a secret
+[[redirects]]
+  from = "/api/cardbenefit"
+  to = "https://ckrohv0jme.execute-api.ap-northeast-2.amazonaws.com/default/CardBenefitResult"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
