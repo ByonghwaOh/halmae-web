@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import { Tab, Tabs, Typography, Box } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import { Typography } from '@mui/material';
 import Header from '../src/components/Header';
 import Main from '../src/components/Main';
 import Survey from '../src/components/Survey';
@@ -10,6 +8,7 @@ import Info from '../src/components/Info';
 import Footer from '../src/components/Footer';
 import { NextSeo } from 'next-seo';
 import { Environment } from '../src/environment';
+import Link from 'next/link';
 
 // Initializing GA and Tracking Pageviews (Universal)
 //import ReactGA from 'react-ga';
@@ -75,16 +74,24 @@ const HomePage = () => {
           content: Environment.keywords,
         }]}
       />
-      <Tabs
-        centered
-        value={value}
-        onChange={handleChange}
-      >
-        <Tab label={<TabText text={'할인메이트'} />} />
-        <Tab label={<TabTextColored
-          text={'설문조사'} subtext={'(스벅쿠폰증정!)'} color={'crimson'} />} />
-        <Tab icon={<HelpOutlineIcon />} />
-      </Tabs>
+      <Box sx={{ display: 'flex', flexDirection: 'row',
+        alignItems: 'center', justifyContent: 'center'}}>
+        <Tabs
+          centered
+          value={value}
+          onChange={handleChange}
+        >
+          <Tab label={<TabText text='할인메이트' />} />
+          <Tab label={<TabTextColored
+            text='설문조사' subtext='(스벅쿠폰!)' color='crimson' />} />
+          <Tab icon={<HelpOutlineIcon sx={{ color: 'darkblue' }} />} />
+        </Tabs>
+        <Typography variant='subtitle1' sx={{fontWeight: 600}}>
+          <Link href='/blog'>
+            <a style={{ textDecoration: 'none', color: 'darkblue' }}>블로그</a>
+          </Link>
+        </Typography>
+      </Box>
       <Header viewText={value === 0 ? true : false} />
       <RenderScreen value={value} />
       <Footer />
