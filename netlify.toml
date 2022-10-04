@@ -4,7 +4,8 @@
 
 [[redirects]]
   from = "/blog"
-  to = "https://blog.halmae.shop"
+  ##to = "https://blog.halmae.shop"
+  to = "https://halmae-blog-fugether.vercel.app"
   status = 301
   force = false
 

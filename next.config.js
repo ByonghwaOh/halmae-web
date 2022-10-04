@@ -1,4 +1,6 @@
 // https://nextjs.org/docs/api-reference/next.config.js/introduction
+// to ensure the proper operation of redirects/rewrites,
+// configure rules in `netlify.toml` file.
 
 module.exports = {
   reactStrictMode: true,
@@ -6,7 +8,8 @@ module.exports = {
     return [
       {
         source: '/blog',
-        destination: 'https://blog.halmae.shop',
+        //destination: 'https://blog.halmae.shop',
+        destination: 'https://halmae-blog-fugether.vercel.app',
         permanent: false,
       },
     ];
