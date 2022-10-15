@@ -39,14 +39,24 @@ const TabTextColored = ({ text, subtext=null, color=null }) => (
 )
 
 const RenderScreen = ({ value }) => {
-  if (value === 0) {
-    return <Main />;
-  } else if (value === 1) {
-    return <Survey />;
-  } else if (value === 2) {
-    return <Info />;
+  if (Environment.survey) {
+    if (value === 0) {
+      return <Main />;
+    } else if (value === 1) {
+      return <Survey />;
+    } else if (value === 2) {
+      return <Info />;
+    } else {
+      return <Typography>구현 안됨!</Typography>
+    };
   } else {
-    return <Typography>구현 안됨!</Typography>
+    if (value === 0) {
+      return <Main />;
+    } else if (value === 1) {
+      return <Info />;
+    } else {
+      return <Typography>구현 안됨!</Typography>
+    };
   };
 };
 
@@ -82,8 +92,8 @@ const HomePage = () => {
           onChange={handleChange}
         >
           <Tab label={<TabText text='할인메이트' />} />
-          <Tab label={<TabTextColored
-            text='설문조사' subtext='(스벅쿠폰!)' color='crimson' />} />
+          {Environment.survey ? <Tab label={<TabTextColored
+            text='설문조사' subtext='(스벅쿠폰!)' color='crimson' />} /> : null}
           <Tab icon={<HelpOutlineIcon sx={{ color: 'darkblue' }} />} />
         </Tabs>
         <Typography variant='subtitle1' sx={{fontWeight: 600}}>
