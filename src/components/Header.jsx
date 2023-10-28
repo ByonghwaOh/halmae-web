@@ -28,6 +28,7 @@ const Header = ({ viewText=true }) => {
         <span className={styleHeaderText}>
           <center>쇼핑몰별로 오늘의 즉시/청구할인 정보를 보여 줍니다.</center>
           <center>(구매전 카드할인과 기준금액이 일치하는지 확인해 주세요.)</center>
+          <br></br>
         </span> : <span />}
     </div>
   );

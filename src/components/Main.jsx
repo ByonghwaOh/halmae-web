@@ -12,6 +12,9 @@ const Main = () => {
     let mallData = [];
     for (let i in data) {
       let element = {...data[i]};
+      if (Environment.exceptMall.includes(element['mall'])) {
+        continue;
+      };
       element['id'] = i;
       element['link'] = Environment.urlDict[element['mall']];
       mallData.push(element);
