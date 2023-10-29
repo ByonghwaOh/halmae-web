@@ -23,3 +23,15 @@
   flex: auto;
   text-align: center;
 }
+
+.main_text {
+  font-size: 14px;
+  font-weight: 500;
+  color: darkslateblue;
+}
+
+.main_text_slim {
+  font-size: 12px;
+  font-weight: 500;
+  color: darkslateblue;
+}

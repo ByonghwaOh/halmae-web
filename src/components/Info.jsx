@@ -3,6 +3,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import styles from '../styles/main.module.css';
 import { Environment } from '../environment';
+import StoreBadge from './StoreBadge';
 
 const CompanyCard = () => (
   <Card sx={{ maxWidth: 345 }}>
@@ -23,7 +24,7 @@ const CompanyCard = () => (
         퓨게더는 AI 연구/개발 전문성을 가진 팀원들로 구성된 팀입니다. 
         온라인 마케팅 플랫폼 개발을 하고 있으며, 향후 오프라인 위치기반 마케팅 시장 진출을 목표로 하고 있습니다.
         {/*2022 예비창업패키지에 선정되었습니다. */}{' '}
-        온라인 쇼핑몰의 할인 정보 제공 장치 및 방법 (출원번호: 10-2022-0101259) 으로 출원 완료 상태입니다.
+        "온라인 쇼핑몰의 할인 정보 제공 장치 및 방법" 으로 특허를 등록하였습니다.
       </Typography>
       <Typography gutterBottom variant="h6" component="div">
         서비스 소개
@@ -32,11 +33,14 @@ const CompanyCard = () => (
         "온라인 쇼핑몰의 게릴라성 할인 정보 알림과 예측" 서비스를 제공하고 있습니다. 
         온라인 쇼핑몰에서의 매일 달라지는 (1) 신용카드 혜택과 (2) 단기 할인 이벤트 정보를 제공하고, 
         혜택 예측 정보를 제공합니다. 
-        현재 신용카드 할인정보를 제공하는 웹 MVP를 런칭하였으며, 연말 앱 런칭을 앞두고 있습니다.
+        현재 신용카드 할인정보를 제공하는 웹 MVP를 서비스 중이며, 최근 Android 앱도 런칭하였습니다.
       </Typography>
+      <Typography gutterBottom variant="h6" component="div"></Typography>
       <Typography gutterBottom variant="h6" component="div">
-        앱 화면 (개발 중)
+        할인메이트 앱 다운로드 (Android)
       </Typography>
+      <center><StoreBadge /></center>
+      <Typography gutterBottom variant="h6" component="div"></Typography>
       <StandardImageList />
     </CardContent>
     <CardActions>

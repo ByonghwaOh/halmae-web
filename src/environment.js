@@ -1,6 +1,7 @@
 export const Environment = {
   googleAnalytics: true,
   survey: false,
+  appUrl: 'https://play.google.com/store/apps/details?id=com.fugether.halmaeapp',
   keywords: `할인메이트, 쇼핑몰, 카드할인, 즉시할인, 청구할인, 인터파크, Hmall, CJ온스타일, 롯데홈쇼핑, 11번가, 
 GS홈쇼핑, AK몰, SSG.COM, 롯데백화점, 현대백화점, 더현대닷컴, SK스토아, 홈앤쇼핑, NS홈쇼핑, KT알파쇼핑, W쇼핑, 티몬, 
 롯데카드, 현대카드, 신한카드, 국민카드, 농협카드, 삼성카드, 우리카드, 하나카드, 카카오페이, 스마일페이`,
@@ -24,10 +25,10 @@ GS홈쇼핑, AK몰, SSG.COM, 롯데백화점, 현대백화점, 더현대닷컴, 
   },
   imageDict: {
     info: '/assets/images/sale896.png',
-    screen01: '/assets/images/screen_0815_01.png',
-    screen02: '/assets/images/screen_0815_02.png',
-    screen03: '/assets/images/screen_0815_03.png',
-    screen04: '/assets/images/screen_0815_04.png',
+    screen01: '/assets/images/screen_20230219_01.png',
+    screen02: '/assets/images/screen_20230219_02.png',
+    screen03: '/assets/images/screen_20230219_03.png',
+    screen04: '/assets/images/screen_20230219_04.png',
   },
   urlDict: {
     인터파크: 'http://m.shop.interpark.com',

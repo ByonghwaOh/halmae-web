@@ -3,7 +3,6 @@ import { Typography, Avatar, Stack, Box, CardContent, Card, IconButton } from '@
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Environment } from '../environment';
 import { useWindowDimensions } from '../utils';
-import ReactStoreBadges from 'react-store-badges';
 
 const benefitColors = {
   '1%': 'darkcyan',
@@ -124,16 +123,6 @@ const CardList = ({ elements }) => {
 
   return (
     <div>
-      <center>
-        <ReactStoreBadges
-          platform={'android'}
-          url={'https://play.google.com/store/apps/details?id=com.fugether.halmaeapp'}
-          locale={'ko-kr'}
-          width={200}
-          height={50}
-          target={'_blank'}
-        />
-      </center>
       {elements.map(element =>
         <ContentCard
           element={element}
